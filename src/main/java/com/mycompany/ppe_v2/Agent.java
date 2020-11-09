@@ -16,7 +16,7 @@ public class Agent extends javax.swing.JFrame {
      */
     public Agent() {
         initComponents();
-        //produitList1.init();
+        produitList1.init();
     }
 
     /**

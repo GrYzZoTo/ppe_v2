@@ -42,7 +42,7 @@ public class Profils extends javax.swing.JPanel {
         jTextFieldPrenomProfil = new javax.swing.JTextField();
         jTextFieldMdp = new javax.swing.JTextField();
         jTextFieldMailProfil = new javax.swing.JTextField();
-        jButtonAddClient = new javax.swing.JButton();
+        jButtonAddPersonnel = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,10 +63,10 @@ public class Profils extends javax.swing.JPanel {
             }
         });
 
-        jButtonAddClient.setText("Ajouter");
-        jButtonAddClient.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddPersonnel.setText("Ajouter");
+        jButtonAddPersonnel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddClientActionPerformed(evt);
+                jButtonAddPersonnelActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class Profils extends javax.swing.JPanel {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jDialogAjoutProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonAddClient, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAddPersonnel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxCatAddP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialogAjoutProfilLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +147,7 @@ public class Profils extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jComboBoxCatAddP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonAddClient)
+                .addComponent(jButtonAddPersonnel)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -213,6 +213,9 @@ public class Profils extends javax.swing.JPanel {
      * Recupère et insere les données dans le ComboBox 
     **/
     
+    /**
+     * Recupere les type de profils dispo
+     */
     public void profilBDD(){
         DefaultComboBoxModel cat = (DefaultComboBoxModel) jComboBoxCatAddP.getModel();
         ResultSet requete = DaoSIO.getInstance().requeteSelection("select * from profil");
@@ -228,6 +231,10 @@ public class Profils extends javax.swing.JPanel {
         
     }
     
+    /**
+     * Affiche les admins enregistré dans la base de donnée
+     * @param evt 
+     */
     private void jButtonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminActionPerformed
         DefaultListModel produit = (DefaultListModel) jListProfils.getModel();
         produit.clear();
@@ -249,11 +256,20 @@ public class Profils extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonAdminActionPerformed
 
+    /**
+     * Affiche la page de création de profils
+     * @param evt 
+     */
     private void jButtonAddProfilsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddProfilsActionPerformed
         jDialogAjoutProfil.setVisible(true);
         jDialogAjoutProfil.setSize(400, 400);
     }//GEN-LAST:event_jButtonAddProfilsActionPerformed
 
+    
+    /**
+     * Permet d'afficher les agents enregistré dans la base de donnée
+     * @param evt 
+     */
     private void jButtonAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgentActionPerformed
         DefaultListModel produit = (DefaultListModel) jListProfils.getModel();
         produit.clear();
@@ -280,10 +296,15 @@ public class Profils extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomProfilActionPerformed
 
-    private void jButtonAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddClientActionPerformed
+    
+    /**
+     * Ajoute un nouveu personnel dans la base de donnée
+     * @param evt 
+     */
+    private void jButtonAddPersonnelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddPersonnelActionPerformed
         CategorieCombo cca = (CategorieCombo) jComboBoxCatAddP.getSelectedItem();
         int ajouter = DaoSIO.getInstance().requeteAction("insert into personel(nom, prenom, telephone, mdp, mail, idProfil) values ('" + jTextFieldNomProfil.getText() + "', '"+ jTextFieldPrenomProfil.getText() +"', '"+ jTextFieldTelProfil.getText() +"', '"+ jTextFieldMdp.getText() + "', '" + jTextFieldMailProfil.getText() +"', '"+ cca.getId() +"')");
-    }//GEN-LAST:event_jButtonAddClientActionPerformed
+    }//GEN-LAST:event_jButtonAddPersonnelActionPerformed
 
     private void jComboBoxCatAddPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCatAddPActionPerformed
         // TODO add your handling code here:
@@ -291,7 +312,7 @@ public class Profils extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAddClient;
+    private javax.swing.JButton jButtonAddPersonnel;
     private javax.swing.JButton jButtonAddProfils;
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonAgent;

@@ -23,25 +23,7 @@ public class Connection extends javax.swing.JFrame {
     public static int connecte;
     public static String nom;
     public static int idP;
-
-    public static String getNom() {
-        return nom;
-    }
-
-    public static void setNom(String nom) {
-        Connection.nom = nom;
-    }
-
-    public static int getIdP() {
-        return idP;
-    }
-
-    public static void setIdP(int idP) {
-        Connection.idP = idP;
-    }
-
-
-    
+ 
     
     /**
      * Creates new form Connection
@@ -93,35 +75,40 @@ public class Connection extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Formulaire de connection qui regarde si le compte existe et s il est admin ou agent
+     * @param evt 
+     */
     private void jButtonConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConnectActionPerformed
         try {
             Admin admin = new Admin();
             Agent agent = new Agent();
             ResultSet lesTuples = DaoSIO.getInstance().requeteSelection("select * from personel where prenom = '" + jTextFieldUser.getText() + "' and mdp = '" + jPasswordFieldPass.getText() +"'" );
-            ResultSet verifAdmin = DaoSIO.getInstance().requeteSelection("select * from personel where idProfil = 1");
-            ResultSet verifAgent = DaoSIO.getInstance().requeteSelection("select * from personel where idProfil = 2");
-            
             if(lesTuples.next()){
                 String nom = lesTuples.getString("nom");
-                int idP = lesTuples.getInt("idPersonnel");
-                if(verifAdmin.next()){
+                int idP = lesTuples.getInt("idProfil");
+                if(idP == 1){
                     admin.setVisible(true);
-                    agent.setVisible(false);
                     admin.setTitle("Vous êtes connecté en tant qu'admin " + nom);
                     jTextFieldUser.disable();
                     jPasswordFieldPass.disable();
                     admin.setSize(500, 300);
                     connecte = 1;
-                }else if(verifAgent.next()){
+                    Connection.nom = nom;
+                    Connection.idP = idP;
+                }else{
                     agent.setVisible(true);
-                    admin.setVisible(false);
                     agent.setTitle("Vous êtes connecté en tant qu'agent " + nom);
                     jTextFieldUser.disable();
                     jPasswordFieldPass.disable();
                     agent.setSize(500, 300);
                     connecte = 1;
+                    Connection.nom = nom;
+                    Connection.idP = idP;
                 }
             }
+          
         } catch (SQLException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }

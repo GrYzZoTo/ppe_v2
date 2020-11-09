@@ -49,7 +49,7 @@ public class ProduitList extends javax.swing.JPanel {
         jButtonSave = new javax.swing.JButton();
         jTextFieldMod = new javax.swing.JTextField();
         jDialogAdd = new javax.swing.JDialog();
-        jButtonAddClient = new javax.swing.JButton();
+        jButtonAddProduit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -73,13 +73,13 @@ public class ProduitList extends javax.swing.JPanel {
         jButtonEncaisser = new javax.swing.JButton();
         jLabelNameL = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButtonProduit = new javax.swing.JButton();
-        jComboBoxCat = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListProduit = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        jButtonProduit = new javax.swing.JButton();
+        jButtonAfficherProduit = new javax.swing.JButton();
+        jComboBoxCat = new javax.swing.JComboBox<>();
+        jButtonVendre = new javax.swing.JButton();
+        jButtonAdd = new javax.swing.JButton();
 
         jListDetail.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(jListDetail);
@@ -128,10 +128,10 @@ public class ProduitList extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButtonAddClient.setText("Ajouter");
-        jButtonAddClient.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddProduit.setText("Ajouter");
+        jButtonAddProduit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddClientActionPerformed(evt);
+                jButtonAddProduitActionPerformed(evt);
             }
         });
 
@@ -177,7 +177,7 @@ public class ProduitList extends javax.swing.JPanel {
                                 .addGroup(jDialogAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBoxCatAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldPop, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonAddClient, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButtonAddProduit, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jDialogAddLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -208,7 +208,7 @@ public class ProduitList extends javax.swing.JPanel {
                     .addComponent(jComboBoxCatAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonAddClient)
+                .addComponent(jButtonAddProduit)
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -314,6 +314,9 @@ public class ProduitList extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jListProduit.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jListProduit);
+
         jButtonProduit.setText("Les produits");
         jButtonProduit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,29 +324,31 @@ public class ProduitList extends javax.swing.JPanel {
             }
         });
 
-        jComboBoxCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
-
-        jButton2.setText("Ajouter");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAfficherProduit.setText("Afficher le produit");
+        jButtonAfficherProduit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonAfficherProduitActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Vendre");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxCat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jComboBoxCatActionPerformed(evt);
             }
         });
 
-        jListProduit.setModel(new DefaultListModel());
-        jScrollPane1.setViewportView(jListProduit);
-
-        jButton1.setText("Modifier");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVendre.setText("Vendre");
+        jButtonVendre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVendreActionPerformed(evt);
+            }
+        });
+
+        jButtonAdd.setText("Ajouter");
+        jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddActionPerformed(evt);
             }
         });
 
@@ -358,13 +363,13 @@ public class ProduitList extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonProduit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonAfficherProduit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonVendre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(jButtonAdd)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -373,17 +378,19 @@ public class ProduitList extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonProduit)
+                    .addComponent(jButtonAfficherProduit)
                     .addComponent(jComboBoxCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addComponent(jButtonVendre)
+                    .addComponent(jButtonAdd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+        /**
+     * Récupere les champ dans la base de donnée
+     */
     public void clientBDD(){
         DefaultComboBoxModel cat = (DefaultComboBoxModel) jComboBoxClient.getModel();
         ResultSet requete = DaoSIO.getInstance().requeteSelection("select * from client");
@@ -396,9 +403,11 @@ public class ProduitList extends javax.swing.JPanel {
             Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
 
         }
-        
     }
     
+    /**
+     * Récupere les champ dans la base de donnée
+     */
     public void catBDD(){
         DefaultComboBoxModel cat = (DefaultComboBoxModel) jComboBoxCat.getModel();
         DefaultComboBoxModel catA = (DefaultComboBoxModel) jComboBoxCatAdd.getModel();
@@ -416,54 +425,13 @@ public class ProduitList extends javax.swing.JPanel {
         
     }
     
-    private void jButtonProduitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProduitActionPerformed
-        DefaultListModel produit = (DefaultListModel) jListProduit.getModel();
-        produit.clear();
-        CategorieCombo ccc = (CategorieCombo) jComboBoxCat.getSelectedItem();
-        if(Connection.connecte != 0){
-            try {
-                ResultSet lesDonnees = DaoSIO.getInstance().requeteSelection("select * from produit where id_categorie = " + ccc.getId() +"");
-                while(lesDonnees.next()){
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(lesDonnees.getString("idProduit")).append(" ");
-                    sb.append(lesDonnees.getString("nomProduit")).append(" ");
-                    sb.append(lesDonnees.getDouble("tarif")).append(" ");
-                    sb.append(lesDonnees.getInt("stock")).append(" ");
-                    sb.append(lesDonnees.getDouble("popularite"));
-                    produit.addElement(sb.toString());
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_jButtonProduitActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultListModel produit = (DefaultListModel) jListDetail.getModel();        
-        jDialogMod.setVisible(true);
-        jDialogMod.setSize(400, 300);
-        if(Connection.connecte != 0){
-            try {
-                ResultSet dProduit = DaoSIO.getInstance().requeteSelection("select * from produit");
-                produit.removeAllElements();
-                while(dProduit.next()){
-                    if (jListProduit.getSelectedValue().split(" ")[0].equalsIgnoreCase(dProduit.getString("idProduit"))) {
-                        produit.addElement(dProduit.getString("idProduit"));
-                        produit.addElement(dProduit.getString("nomProduit"));
-                        produit.addElement(dProduit.getDouble("tarif"));
-                        produit.addElement(dProduit.getInt("stock"));
-                        produit.addElement(dProduit.getDouble("popularite"));
-                    }
-                    
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    /**
+     * Selectionne la valeur surligné
+     * @param evt 
+     */
     private void jButtonModifierValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierValueActionPerformed
-                DefaultListModel produit = (DefaultListModel) jListDetail.getModel();
+        DefaultListModel produit = (DefaultListModel) jListDetail.getModel();
         int index = jListDetail.getSelectedIndex();
         System.out.println(index);
 
@@ -479,6 +447,11 @@ public class ProduitList extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonModifierValueActionPerformed
 
+    /**
+     * Update la base de donnee. Ou sauvegarde les modification apportées sur le produit
+     *
+     * @param evt 
+     */
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         DefaultListModel mProduit = (DefaultListModel) jListDetail.getModel();
         int index = jListDetail.getSelectedIndex();
@@ -528,21 +501,24 @@ public class ProduitList extends javax.swing.JPanel {
         }        
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
-    private void jButtonAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddClientActionPerformed
+    /**
+     * Inser un produit dans la base de donnée 
+     * @param evt 
+     */
+    private void jButtonAddProduitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddProduitActionPerformed
         CategorieCombo cca = (CategorieCombo) jComboBoxCatAdd.getSelectedItem();
         int ajouter = DaoSIO.getInstance().requeteAction("insert into produit(nomProduit, tarif, stock, popularite, id_categorie) values ('" + jTextFieldNomProduit.getText() + "', '"+ jTextFieldTarif.getText() +"', '"+ jTextFieldStock.getText() +"', '"+ jTextFieldPop.getText() +"', '"+ cca.getId() +"')");
 
-    }//GEN-LAST:event_jButtonAddClientActionPerformed
+    }//GEN-LAST:event_jButtonAddProduitActionPerformed
 
     private void jComboBoxCatAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCatAddActionPerformed
 
     }//GEN-LAST:event_jComboBoxCatAddActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jDialogAdd.setVisible(true);
-        jDialogAdd.setSize(400, 300);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    /**
+     * Fait le calcul du prix en fonction de la quantité de produit selectionnée
+     * @param evt 
+     */
     private void jButtonClcPrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClcPrixActionPerformed
         int mescouilles;
         try {
@@ -563,12 +539,76 @@ public class ProduitList extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxClientActionPerformed
 
+    /**
+     * Inser une vente dans la base de donnée
+     * @param evt 
+     */
     private void jButtonEncaisserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEncaisserActionPerformed
         CategorieCombo cca = (CategorieCombo) jComboBoxClient.getSelectedItem();
-        DaoSIO.getInstance().requeteAction("insert into vente(date_vente, nomPersonnel, idPersonnel, idClient, nomProduit, qte, nomClient) values (CURRENT_DATE(),'"+ Connection.getNom() +"', '"+ Connection.getIdP() +"', '"+ cca.getId() +"', '"+ jLabelNameL.getText() +"', '"+ jTextFieldQuantite.getText() +"', '"+ cca.getValue() +"')");
+        DaoSIO.getInstance().requeteAction("insert into vente(date_vente, nomPersonnel, idPersonnel, idClient, nomProduit, qte, nomClient) values (CURRENT_DATE(),'"+ Connection.nom +"', '"+ Connection.idP +"', '"+ cca.getId() +"', '"+ jLabelNameL.getText() +"', '"+ jTextFieldQuantite.getText() +"', '"+ cca.getValue() +"')");
     }//GEN-LAST:event_jButtonEncaisserActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    
+    /**
+     * Affiche la liste des produit enregistré dans la base de donnée
+     * @param evt 
+     */
+    private void jButtonProduitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProduitActionPerformed
+        DefaultListModel produit = (DefaultListModel) jListProduit.getModel();
+        produit.clear();
+        CategorieCombo ccc = (CategorieCombo) jComboBoxCat.getSelectedItem();
+            try {
+                ResultSet lesDonnees = DaoSIO.getInstance().requeteSelection("select * from produit where id_categorie = " + ccc.getId() +"");
+                while(lesDonnees.next()){
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(lesDonnees.getString("idProduit")).append(" ");
+                    sb.append(lesDonnees.getString("nomProduit")).append(" ");
+                    sb.append(lesDonnees.getDouble("tarif")).append(" ");
+                    sb.append(lesDonnees.getInt("stock")).append(" ");
+                    sb.append(lesDonnees.getDouble("popularite"));
+                    produit.addElement(sb.toString());
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButtonProduitActionPerformed
+
+    /**
+     * Affiche le produit selecetionné pour pouvoir le modifier ou avoir plus d'info sur celui ci
+     * @param evt 
+     */
+    private void jButtonAfficherProduitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAfficherProduitActionPerformed
+        DefaultListModel produit = (DefaultListModel) jListDetail.getModel();
+
+        jDialogMod.setVisible(true);
+        jDialogMod.setSize(400, 300);
+            try {
+                ResultSet dProduit = DaoSIO.getInstance().requeteSelection("select * from produit");
+                produit.removeAllElements();
+                while(dProduit.next()){
+                    if (jListProduit.getSelectedValue().split(" ")[0].equalsIgnoreCase(dProduit.getString("idProduit"))) {
+                        produit.addElement(dProduit.getString("idProduit"));
+                        produit.addElement(dProduit.getString("nomProduit"));
+                        produit.addElement(dProduit.getDouble("tarif"));
+                        produit.addElement(dProduit.getInt("stock"));
+                        produit.addElement(dProduit.getDouble("popularite"));
+                    }
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButtonAfficherProduitActionPerformed
+
+    private void jComboBoxCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCatActionPerformed
+
+    }//GEN-LAST:event_jComboBoxCatActionPerformed
+
+    /**
+     * Création d'une vente en affichant sur une autre page tout les détail du produit, selection de la quatité voulu ...
+     * @param evt 
+     */
+    private void jButtonVendreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendreActionPerformed
         jDialogVendre.setVisible(true);
         jDialogVendre.setSize(400, 300);
             try {
@@ -580,24 +620,33 @@ public class ProduitList extends javax.swing.JPanel {
                         jLabelPrixU.setText(tt + "");
                         jLabelNameL.setText(np + "");
                     }
-                    
+
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonVendreActionPerformed
+
+    /**
+     * Affiche la page d'ajout de produit
+     * @param evt 
+     */
+    private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
+        jDialogAdd.setVisible(true);
+        jDialogAdd.setSize(400, 300);
+    }//GEN-LAST:event_jButtonAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButtonAddClient;
+    public javax.swing.JButton jButtonAdd;
+    private javax.swing.JButton jButtonAddProduit;
+    private javax.swing.JButton jButtonAfficherProduit;
     private javax.swing.JButton jButtonClcPrix;
     private javax.swing.JButton jButtonEncaisser;
     private javax.swing.JButton jButtonModifierValue;
     private javax.swing.JButton jButtonProduit;
     private javax.swing.JButton jButtonSave;
+    private javax.swing.JButton jButtonVendre;
     private javax.swing.JComboBox<String> jComboBoxCat;
     private javax.swing.JComboBox<String> jComboBoxCatAdd;
     private javax.swing.JComboBox<String> jComboBoxClient;

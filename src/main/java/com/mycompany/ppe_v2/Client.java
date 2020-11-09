@@ -127,11 +127,18 @@ public class Client extends javax.swing.JPanel {
                 .addContainerGap(108, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Inser un client a la base de donnée
+     * @param evt 
+     */
     private void jButtonAddToBDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddToBDDActionPerformed
         int ajouter = DaoSIO.getInstance().requeteAction("INSERT INTO `client` (`idClient`, `nom`, `prenom`, `mail`, `telephone`) VALUES (NULL, '" + jTextFieldNomClient.getText() + "', '"+ jTextFieldPrenomClient.getText() +"', '"+ jTextFieldMail.getText() +"', '"+ jTextFieldTel.getText() +"')");
     }//GEN-LAST:event_jButtonAddToBDDActionPerformed
 
+    /**
+     * Afficher lesc client Enregistré a la BDD
+     * @param evt 
+     */
     private void jButtonAfficheClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAfficheClientActionPerformed
         DefaultListModel produit = (DefaultListModel) jListClient.getModel();
         produit.clear();

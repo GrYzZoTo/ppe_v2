@@ -16,6 +16,10 @@ public class Admin extends javax.swing.JFrame {
      */
     public Admin() {
         initComponents();
+        produitList3.init();
+        produitList2.init();
+        produitList1.init();
+        profils1.init();
     }
 
     /**

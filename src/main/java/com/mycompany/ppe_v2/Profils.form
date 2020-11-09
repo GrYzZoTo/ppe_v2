@@ -14,7 +14,7 @@
                           <Component id="jLabel5" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButtonAddClient" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="jButtonAddPersonnel" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                               <Component id="jComboBoxCatAddP" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -80,7 +80,7 @@
                       <Component id="jComboBoxCatAddP" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButtonAddClient" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAddPersonnel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -105,12 +105,12 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldMailProfil">
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonAddClient">
+        <Component class="javax.swing.JButton" name="jButtonAddPersonnel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ajouter"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddClientActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddPersonnelActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
