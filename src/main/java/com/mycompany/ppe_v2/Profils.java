@@ -210,10 +210,6 @@ public class Profils extends javax.swing.JPanel {
     }
     
     /**
-     * Recupère et insere les données dans le ComboBox 
-    **/
-    
-    /**
      * Recupere les type de profils dispo
      */
     public void profilBDD(){
