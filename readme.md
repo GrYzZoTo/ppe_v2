@@ -9,3 +9,7 @@
 ## Installation ✔
 - Extraire le fichier ppe.jar qui se trouve dans "/target/"
 - Double click dessus pour le lancer
+
+## Authentification 
+- Admin : user : "Theo" mdp : "theolebg"
+- Agent : user : toto" mdp : "tt"
