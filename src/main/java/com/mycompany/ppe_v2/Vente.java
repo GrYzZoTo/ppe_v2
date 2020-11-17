@@ -7,6 +7,7 @@ package com.mycompany.ppe_v2;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -35,7 +36,8 @@ public class Vente extends javax.swing.JPanel {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableVente = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jButtonVente = new javax.swing.JButton();
+        jButtonFacture = new javax.swing.JButton();
 
         jTableVente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -48,10 +50,17 @@ public class Vente extends javax.swing.JPanel {
         jTableVente.setColumnSelectionAllowed(true);
         jScrollPane2.setViewportView(jTableVente);
 
-        jButton1.setText("Afficher Ventes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVente.setText("Afficher Ventes");
+        jButtonVente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVenteActionPerformed(evt);
+            }
+        });
+
+        jButtonFacture.setText("Genrerer facture");
+        jButtonFacture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFactureActionPerformed(evt);
             }
         });
 
@@ -65,14 +74,18 @@ public class Vente extends javax.swing.JPanel {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(jButtonFacture)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonVente)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonVente)
+                    .addComponent(jButtonFacture))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -83,7 +96,7 @@ public class Vente extends javax.swing.JPanel {
      * Affiche les ventes et les insere dans le tableau
      * @param evt 
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonVenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenteActionPerformed
 
         DefaultTableModel model = (DefaultTableModel) jTableVente.getModel();
             try {
@@ -95,11 +108,22 @@ public class Vente extends javax.swing.JPanel {
             } catch (SQLException ex) {
                 Logger.getLogger(ProduitList.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonVenteActionPerformed
+
+    private void jButtonFactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFactureActionPerformed
+       ArrayList<String> listFacture = new ArrayList();
+       listFacture.add("Nike Blazer");
+       listFacture.add("Nike sb pigeon");
+       listFacture.add("Nike Jordan");
+       listFacture.add("Nike air force one");
+       new Facture(listFacture, "1000", 12);
+        
+    }//GEN-LAST:event_jButtonFactureActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonFacture;
+    private javax.swing.JButton jButtonVente;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableVente;
     // End of variables declaration//GEN-END:variables
