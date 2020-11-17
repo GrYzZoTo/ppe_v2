@@ -6,14 +6,15 @@ com\mycompany\ppe_v2\ProduitList$11.class
 com\mycompany\ppe_v2\Profils$1.class
 com\mycompany\ppe_v2\Profils$5.class
 com\mycompany\ppe_v2\ProduitList$2.class
-com\mycompany\ppe_v2\Admin$1.class
 com\mycompany\ppe_v2\Client$1.class
 com\mycompany\ppe_v2\ProduitList$3.class
 com\mycompany\ppe_v2\ProduitList$8.class
 com\mycompany\ppe_v2\Profils$6.class
 com\mycompany\ppe_v2\Connection$1.class
+com\mycompany\ppe_v2\Vente$2.class
 com\mycompany\ppe_v2\Connection.class
 com\mycompany\ppe_v2\ProduitList$10.class
+com\mycompany\ppe_v2\Facture.class
 com\mycompany\ppe_v2\Profils.class
 com\mycompany\ppe_v2\ProduitList$5.class
 com\mycompany\ppe_v2\Connection$2.class
@@ -26,7 +27,6 @@ com\mycompany\ppe_v2\Client.class
 com\mycompany\ppe_v2\Vente$1.class
 com\mycompany\ppe_v2\Admin.class
 com\mycompany\ppe_v2\ProduitList$12.class
-com\mycompany\ppe_v2\Agent$1.class
 com\mycompany\ppe_v2\Client$2.class
 com\mycompany\ppe_v2\ProduitList$1.class
 com\mycompany\ppe_v2\Agent.class

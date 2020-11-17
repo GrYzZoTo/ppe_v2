@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ppe_v2:jar">
+    <output-path>$PROJECT_DIR$/../..//artifacts/ppe_v2_jar</output-path>
+    <root id="archive" name="ppe_v2.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="ppe_v2" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.48/mysql-connector-java-5.1.48.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
